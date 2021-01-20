@@ -1,10 +1,5 @@
-.App {
+.App{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .black-nav{
@@ -15,6 +10,86 @@
   padding: 20px;
   font-weight: 600;
   font-size: 20px;
+}
+
+.circle {
+  width: 185px;
+  height: 145px; 
+  border-radius: 70%;
+  overflow: hidden;
+  display: inline-block;
+
+}
+
+.taeseop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*img와 text들*/
+.imgtext{
+  position: relative;
+}
+
+.harry{
+  position: absolute;
+  width:292px;
+  height:407px;
+  opacity:0.5;
+  transform: rotate(20deg);
+  left: 202.53px;
+  top: 195.6px;
+}
+
+.true{
+  position: absolute;
+  width:292px;
+  height:407px;
+  opacity:0.5;
+  transform: rotate(20deg);
+  left: 472.53px;
+  top: 87.6px;
+}
+
+.inception{
+  position: absolute;
+  width:292px;
+  height:407px;
+  opacity:0.5;
+  transform: rotate(20deg);
+  left: 652.53px;
+  top: 274.6px;
+}
+
+.about{
+  position: absolute;
+  width:292px;
+  height:407px;
+  opacity:0.5;
+  transform: rotate(20deg);
+  left: 905.53px;
+  top: 138.6px;
+}
+
+.grown{
+  position: absolute;
+  width:292px;
+  height:407px;
+  opacity:0.5;
+  transform: rotate(20deg);
+  left: 1084.53px;
+  top: 313.6px;
+}
+
+.question{
+  position: absolute;
+  color: white;
+  top:150px;
+  left:335px;
+  z-index: 1;
+  font-size:30px;
 }
 
 

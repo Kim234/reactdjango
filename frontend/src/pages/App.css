@@ -3,13 +3,14 @@
 }
 
 .black-nav{
-  background: black;
+  background: #FFFFFF;
   width: 100%;
   display: center;
-  color: white;
   padding: 20px;
-  font-weight: 600;
-  font-size: 20px;
+  left: 0px;
+  top:8px;
+  width:1597px;
+  height: 100px;
 }
 
 .circle {
@@ -18,81 +19,55 @@
   border-radius: 70%;
   overflow: hidden;
   display: inline-block;
-
+  position: absolute;
+  left:45px;
+  top:18px;
+  z-index:1;
 }
 
-.taeseop {
+.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-
-/*img와 text들*/
-.imgtext{
-  position: relative;
-}
-
-.harry{
-  position: absolute;
-  width:292px;
-  height:407px;
-  opacity:0.5;
-  transform: rotate(20deg);
-  left: 202.53px;
-  top: 195.6px;
-}
-
-.true{
-  position: absolute;
-  width:292px;
-  height:407px;
-  opacity:0.5;
-  transform: rotate(20deg);
-  left: 472.53px;
-  top: 87.6px;
-}
-
-.inception{
-  position: absolute;
-  width:292px;
-  height:407px;
-  opacity:0.5;
-  transform: rotate(20deg);
-  left: 652.53px;
-  top: 274.6px;
-}
-
-.about{
-  position: absolute;
-  width:292px;
-  height:407px;
-  opacity:0.5;
-  transform: rotate(20deg);
-  left: 905.53px;
-  top: 138.6px;
-}
-
-.grown{
-  position: absolute;
-  width:292px;
-  height:407px;
-  opacity:0.5;
-  transform: rotate(20deg);
-  left: 1084.53px;
-  top: 313.6px;
+.img_heart{
+  width: 500px;
+  height: 500px;
 }
 
 .question{
-  position: absolute;
-  color: white;
-  top:150px;
-  left:335px;
-  z-index: 1;
-  font-size:30px;
+  left: 676px;
+  top: 680px;
+}
+
+.result{
+  margin-top: 30px;
+  left: 676px;
+  top: 380px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.imgfile{
+  float:left;
+  width: 30%;
+  margin:20px;
+  height: 282px;
+  background-color: blue;
 }
 
 
+.imgfile::after{
+  content:"";
+  display:table;
+  clear:both
+}
+
+hr{
+  background-color:#E76464;
+  border: 0;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

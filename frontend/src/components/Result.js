@@ -4,6 +4,8 @@ import imgfile0 from "../images/hear.jpg"
 import imgfile1 from '../images/about.jpg'
 import imgfile2 from '../images/love.jpg'
 import imgfile3 from '../images/note.jpg'
+import {NavLink} from "react-router-dom";
+import Button from 'react-bootstrap/Button'
 
 class Result extends React.Component {
   render(){
@@ -25,17 +27,23 @@ class Result extends React.Component {
             </h3>
 
             <div className="imgfile">
-              <img src={imgfile1} class="img"></img><a style={{fontSize:"15px"}}>어바웃타임</a>
+              <img src={imgfile1} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px",color:"black"}}><strong>어바웃타임</strong></a>
             </div>
             <div className="imgfile">
-              <img src={imgfile2} class="img"></img><a style={{fontSize:"15px"}}>러브 액츄얼리</a>
+              <img src={imgfile2} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px", color:"black"}}><strong>러브 액츄얼리</strong></a>
             </div>
 
             <div className="imgfile">
-              <img src={imgfile3} class="img"></img><a style={{fontSize:"15px"}}>노트북</a>
+              <img src={imgfile3} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px", color:"black"}}><strong>노트북</strong></a>
             </div>
 
           </div>
+
+          <NavLink to ={{
+                  pathname: "/"
+              }}>
+                <Button style={{width:"200px",marginTop:"50px"}} variant="outline-danger">다시 하기</Button>
+            </NavLink>
 
         </div>
 

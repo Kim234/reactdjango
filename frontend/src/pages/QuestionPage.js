@@ -66,7 +66,7 @@ class QuestionPage extends React.Component{
                 width:400,
                 height:100,
                 margin:20, 
-                fontSize:20,
+                fontSize:15,
                 borderRadius: 20
             }
 

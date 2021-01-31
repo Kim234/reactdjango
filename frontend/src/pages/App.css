@@ -13,22 +13,57 @@
   height: 100px;
 }
 
-.circle {
-  width: 185px;
+.taeseop {
+  width: 30%;
   height: 145px; 
-  border-radius: 70%;
   overflow: hidden;
-  display: inline-block;
-  position: absolute;
-  left:45px;
-  top:18px;
-  z-index:1;
+  float:left;
+  margin:20px;
 }
 
-.img {
+.img2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.introduce{
+  display:block;
+}
+
+.introduce::after{
+  content:"";
+  display:table;
+  clear:both
+}
+
+.taeseop_t {
+  width:60%;
+  float:left;
+  height: 145px; 
+}
+
+.taeseop_i{
+  color: #789467;
+  font-size: 15px;
+  display:block;
+  margin-bottom: 20px;
+}
+
+.taeseop_i::after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.img {
+  width: 90.5%;
+  height: 90.5%;
+  object-fit: cover;
+  display: block;
+  padding :10px;
+  margin:0px auto;
+  border-radius: 20px;
 }
 
 .img_heart{
@@ -51,10 +86,10 @@
 
 .imgfile{
   float:left;
-  width: 30%;
-  margin:20px;
+  width: 33%;
   height: 282px;
-  background-color: blue;
+  border-radius: 20px;
+  border: 1px solid #CFCFCF;
 }
 
 
@@ -64,10 +99,7 @@
   clear:both
 }
 
-hr{
-  background-color:#E76464;
-  border: 0;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

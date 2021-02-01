@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button'
 import imgfile from "../images/taeseop.jpg"
 import imgfile0 from "../images/home.png"
 
-//commit 이상
 class Home extends React.Component {
   render(){
     return(

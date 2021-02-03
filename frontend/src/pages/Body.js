@@ -11,8 +11,8 @@ class Body extends React.Component {
         <div className="App">
           <BrowserRouter>
             <Route exact path="/" component={Home}></Route>
-            <Route exact path="/Question" component={Question}></Route>
-            <Route exact path="/Result" component={Result}></Route>
+            <Route path="/Question" component={Question}></Route>
+            <Route path="/Result" component={Result}></Route>
           </BrowserRouter>
         </div>
     );

@@ -10,7 +10,7 @@ class QuestionPage extends React.Component{
     this.onChangeAns = this.onChangeAns.bind(this);
     this.state={
         answer : 0,
-        nextpage :['/Question-1','/Question-2','/Question-3','/Question-4','/Question-5','/Question-6',
+        nextpage :['/','/Question-2','/Question-3','/Question-4','/Question-5','/Question-6',
         '/Question-7','/Question-8','/Question-9','/Question-10','/Question-11','/Question-12','/Result']
         }
         

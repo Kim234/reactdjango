@@ -8,6 +8,25 @@ import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper'
 class Result extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+        posts: []
+      };
+}
+
+async componentDidMount() {
+  try{
+    const res= await fetch("http://127.0.0.1:8000/movie/map_main");
+    const posts = await res.json();
+    this.setState({
+      posts
+    });
+  } catch(e){
+      console.log(e);
+  }
+}
   
   render(){
     const styles = theme => ({
@@ -22,6 +41,8 @@ class Result extends React.Component {
           color: theme.palette.text.primary,
       },
     });
+
+    const {posts}=this.state;
 
     return(
         
@@ -39,14 +60,14 @@ class Result extends React.Component {
             <h3 style={{fontSize:"20px"}}>
                 <strong>이런 영화는 어떠세요?</strong>
             </h3>
-      
-            <div className={styles.root}>
 
+            <div className={styles.root}>
+         
             <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>
               <img src={imgfile1} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px",color:"black"}}><strong>어바웃타임</strong></a>
             </Paper>
             <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>
-              <img src={imgfile2} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px", color:"black"}}><strong>러브 액츄얼리</strong></a>
+              <img src={imgfile2} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px", color:"black"}}><strong>러브액츄얼리</strong></a>
             </Paper>
 
             <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>

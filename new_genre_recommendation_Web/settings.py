@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
-    "http://127.0.0.1:8000",
+    # "http://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'new_genre_recommendation_Web.urls'
@@ -78,10 +78,10 @@ TEMPLATES = [
     },
 ]
 
-#경로 추가
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'movie', 'build', 'static'),
-]
+# #경로 추가
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'movie', 'build', 'static'),
+# ]
 
 WSGI_APPLICATION = 'new_genre_recommendation_Web.wsgi.application'
 

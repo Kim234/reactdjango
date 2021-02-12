@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './pages/Header';
 import Body from './pages/Body';
 import App from './pages/App'
+import Result from './components/Result'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,6 +12,7 @@ ReactDOM.render(
     <Header />
     <Body />
     {/* <App /> */}
+    {/* <Result/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

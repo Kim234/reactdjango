@@ -1,3 +1,5 @@
+//django+react+db 확인
+
 import React ,  {Component} from "react";
 import {render} from "react-dom";
 
@@ -5,39 +7,30 @@ class App extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data: [],
-            loaded: false,
-            placeholder: "Loading"
+            posts: []
           };
     }
 
-    componentDidMount() {
-        fetch("map_main")
-          .then(response => {
-            if (response.status !=200) {
-              return this.setState(() => {
-                return { placeholder: "Something went wrong!" };
-              });
-            }
-            return response.json();
-          })
-          .then(data => {
-            this.setState(() => {
-              return {
-                data,
-                loaded: true
-              };
-            });
-          });
+
+    async componentDidMount() {
+      try{
+        const res= await fetch("http://127.0.0.1:8000/movie/map_main");
+        const posts = await res.json();
+        this.setState({
+          posts
+        });
+      } catch(e){
+          console.log(e);
       }
+    }
     
       render() {
-        const {data,loaded,placeholder}=this.state;
-        if(!data[0]){
+        const {posts}=this.state;
+        if(!posts[0]){
             return (<div>still waiting</div>);
         }
         else{
-            return(<div>{data[0].movie_name}</div>);
+            return(<div>{posts[0].movie_name}</div>);
         }
         
       }

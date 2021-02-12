@@ -8,4 +8,4 @@ class MovieDbCreate(generics.ListCreateAPIView):
 
 
 def test_html(requests):
-    return render(requests, 'frontend/index.html')
+    return render(requests, 'public/index.html',{})

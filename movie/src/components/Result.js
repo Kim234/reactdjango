@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper'
 
-// 커밋 테스트
+// 커밋 테스트22
 class Result extends React.Component {
 
   constructor(props){

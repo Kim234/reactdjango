@@ -1,9 +1,5 @@
 import "../pages/App.css";
 import React from "react";
-import imgfile0 from "../images/hear.jpg"
-import imgfile1 from '../images/about.jpg'
-import imgfile2 from '../images/love.jpg'
-import imgfile3 from '../images/note.jpg'
 import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper'
@@ -43,38 +39,46 @@ async componentDidMount() {
     });
 
     const {posts}=this.state;
+    const romancepost=this.state.posts.filter(post => post.genre.includes('로맨스'));
 
-    return(
-        
+    const recommendMovie=
+          romancepost.map(post=>
+            <>
+            <div className={styles.root}>
+            
+            {/* 이미지 경로를 src에 직접 쓰려면 public 폴더 아래(index.html과 동등하거나 하위 위치)에 있어야 함*/}
+
+            <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>
+              <img src={post.img_url} class="img"></img><a href={posts[0].movie_url} style={{fontSize:"15px",color:"black"}}><strong>{post.movie_name}</strong></a>
+            </Paper>
+
+            </div>
+            </>
+            )
+
+    if(!posts[0]){
+        return(
+          <div>still waiting</div>
+        );
+      }
+
+    else{
+      return(
         <div className="result">
           <div className="recommendG">
             <h3 style={{fontSize:"20px"}}>
-              <strong>오늘은 로맨스 장르를 추천합니다.</strong>
+              <strong>오늘은 {posts[0].genre} 장르를 추천합니다.</strong>
             </h3>
-           
-            <img src={imgfile0} class="img_heart"></img>
-           
+          
+            <img src="/images/hear.jpg" class="img_heart"></img>
+          
             
           </div>
           <div className="recommendM">
             <h3 style={{fontSize:"20px"}}>
                 <strong>이런 영화는 어떠세요?</strong>
             </h3>
-
-            <div className={styles.root}>
-         
-            <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>
-              <img src={imgfile1} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px",color:"black"}}><strong>어바웃타임</strong></a>
-            </Paper>
-            <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>
-              <img src={imgfile2} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px", color:"black"}}><strong>러브액츄얼리</strong></a>
-            </Paper>
-
-            <Paper elevation={3} style={{width:"30%",float:"left",height: "282px",margin:"12px"}} className={styles.paper}>
-              <img src={imgfile3} class="img"></img><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=92075" style={{fontSize:"15px", color:"black"}}><strong>노트북</strong></a>
-            </Paper>
-
-            </div>
+            {recommendMovie}
           </div>
           <NavLink to ={{
                   pathname: "/"
@@ -83,8 +87,8 @@ async componentDidMount() {
           </NavLink> 
 
         </div>
-
-    );
+      );
+    }
   }
 }
 

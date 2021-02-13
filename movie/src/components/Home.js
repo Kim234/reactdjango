@@ -2,15 +2,13 @@ import "../pages/App.css";
 import React from "react";
 import {NavLink} from "react-router-dom";
 import Button from 'react-bootstrap/Button'
-import imgfile from "../images/taeseop.jpg"
-import imgfile0 from "../images/home.png"
 
 class Home extends React.Component {
   render(){
     return(
       <div className="App">
         <div style={{marginTop:"50px", display:"block"}}>
-            <img src={imgfile0} style={{width:"700px", height:"500px", marginBottom:"30px", borderRadius: "20px"}}></img>
+            <img src="/images/home.png" style={{width:"700px", height:"500px", marginBottom:"30px", borderRadius: "20px"}}></img>
             <h3 style={{fontSize:"30px"}}>
               <strong>안녕하세요, 윤태섭입니다.</strong>
             </h3>
@@ -27,7 +25,7 @@ class Home extends React.Component {
 
         <div>
             <article className="introduce">
-              <div className="taeseop"><img className="img2" src={imgfile}></img></div>
+              <div className="taeseop"><img className="img2" src="/images/taeseop.jpg"></img></div>
               <div className="taeseop_t">
                 <hr style={{width:"100%",height:"7px", backgroundColor:"#FAD2D2"}}></hr>
                 <p style={{marginBottom:"10px"}}><strong>윤태섭</strong></p>

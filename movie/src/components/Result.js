@@ -3,6 +3,8 @@ import React from "react";
 import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper'
+
+// 커밋 테스트
 class Result extends React.Component {
 
   constructor(props){

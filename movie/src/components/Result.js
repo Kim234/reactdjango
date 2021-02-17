@@ -16,7 +16,7 @@ class Result extends React.Component {
 
 async componentDidMount() {
   try{
-    const res= await fetch("http://127.0.0.1:8000/movie/map_main");
+    const res= await fetch("movie/map_main");
     const posts = await res.json();
     this.setState({
       posts

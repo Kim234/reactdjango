@@ -12,5 +12,5 @@ class MovieDbUpdate(UpdateAPIView):
     serializer_class=MovieDbSerializer
 
 
-def test_html(requests):
-    return render(requests, 'public/index.html',{})
+# def test_html(requests):
+#     return render(requests, 'public/index.html',{})

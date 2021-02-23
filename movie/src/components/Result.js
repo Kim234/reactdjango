@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper'
 
-// 커밋 테스트22
 class Result extends React.Component {
 
   constructor(props){
@@ -41,10 +40,44 @@ async componentDidMount() {
     });
 
     const {posts}=this.state;
-    const romancepost=this.state.posts.filter(post => post.genre.includes('로맨스'));
+
+    console.log(this.props.userAnswer[0].result)
+    console.log(this.props.userAnswer[1].result)
+    console.log(this.props.userAnswer[2].result)
+    var decisionGenre;
+    if(this.props.userAnswer[0].result == 1 && this.props.userAnswer[2].result == 2){
+        decisionGenre = "전쟁";
+    }else if(this.props.userAnswer[0].result ==2 && this.props.userAnswer[2].result == 2){  
+        decisionGenre = "로맨스";
+    }else if(this.props.userAnswer[0].result == 3 && this.props.userAnswer[2].result == 2){
+        decisionGenre = "코미디";
+    }else if(this.props.userAnswer[3].result == 2){
+      decisionGenre = "액션";
+    }else if(this.props.userAnswer[4].result == 1 ){
+      decisionGenre = "음악";
+    }else if(this.props.userAnswer[5].result == 2 || this.props.userAnswer[7].result == 1 ){
+      decisionGenre = "SF";
+    }else if(this.props.userAnswer[6].result == 2 || this.props.userAnswer[7].result == 2){
+      decisionGenre = "판타지";
+    }else if(this.props.userAnswer[8].result == 1){
+      decisionGenre = "스포츠";
+    }else if(this.props.userAnswer[9].result == 1){
+      decisionGenre = "스릴러";
+    }else if(this.props.userAnswer[10].result == 2){
+      decisionGenre = "전쟁";
+    }else if(this.props.userAnswer[11].result == 1){
+      decisionGenre = "음악";
+    }else decisionGenre = "코미디";
+
+
+    console.log(this.props.userAnswer);
+    console.log(decisionGenre);
+    const recommendpost=this.state.posts.filter(post => post.genre.includes(decisionGenre));
+    
+    console.log(recommendpost);
 
     const recommendMovie=
-          romancepost.map(post=>
+          recommendpost.map(post=>
             <>
             <div className={styles.root}>
             
@@ -69,7 +102,7 @@ async componentDidMount() {
         <div className="result">
           <div className="recommendG">
             <h3 style={{fontSize:"20px"}}>
-              <strong>오늘은 {posts[0].genre} 장르를 추천합니다.</strong>
+              <strong>오늘은 {recommendpost[0].genre} 장르를 추천합니다.</strong>
             </h3>
           
             <img src="/images/hear.jpg" class="img_heart"></img>

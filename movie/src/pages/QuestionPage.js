@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from "react-router-dom"
-import {Radio} from 'antd';
 import {Button} from 'react-bootstrap'
 
 class QuestionPage extends React.Component{
@@ -10,11 +9,13 @@ class QuestionPage extends React.Component{
     this.onChangeAns = this.onChangeAns.bind(this);
     this.state={
         answer : 0,
+        saveAnswer : 0,
         nextpage :['/','/Question-2','/Question-3','/Question-4','/Question-5','/Question-6',
         '/Question-7','/Question-8','/Question-9','/Question-10','/Question-11','/Question-12','/Result']
         }
         
     }
+
     onChangeAns = (e)=>{
         this.setState({answer:e.target.value})
         console.log("questionarray id :", this.props.questionArray.id);
@@ -60,14 +61,17 @@ class QuestionPage extends React.Component{
             ]            
             var sliceemotion = this.sliceEmotion(this.props.firstAns,EmotionList);
         }
-            const secondAns = this.state.secondAns;
+
 
             const buttonStyle={
                 width:400,
                 height:100,
-                margin:20, 
                 fontSize:15,
-                borderRadius: 20
+                borderRadius: 20,
+                marginLeft:500,
+                marginRight:500,
+                marginBottom:20,
+                marginTop:20
             }
 
         return(
@@ -76,18 +80,16 @@ class QuestionPage extends React.Component{
                 <p><strong>{this.props.questionArray.question}</strong> </p>
                 {
                     this.props.questionArray.id !== 2 &&
+                    
                     <Link to= {this.state.nextpage[this.props.questionArray.id]}>
-                        <Radio.Group>
-                            {this.props.choiceList.map((m,index)=>(<div><Button variant ="outline-danger" style={buttonStyle} onClick={this.onChangeAns}  value = {index+1}  key ={index}> {m} </Button></div>))}
-                        </Radio.Group>
+                            {this.props.choiceList.map((m,index)=>(<Button variant ="outline-danger" style={buttonStyle} onClick={this.onChangeAns}  value = {index+1}  key ={index}> {m}</Button>))}
                     </Link>
+                    
                 } 
                 {
                     this.props.questionArray.id == 2 &&
                     <Link to= {this.state.nextpage[this.props.questionArray.id]}>
-                        <Radio.Group>
                             {sliceemotion.map((m,index)=>(<div><Button variant ="outline-danger" style={buttonStyle} value={m.id} onClick={this.onChangeAns} key ={index}> {m.emotion} </Button></div>))}
-                        </Radio.Group>
                     </Link>
                 }      
                   

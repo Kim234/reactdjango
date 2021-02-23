@@ -82,7 +82,7 @@ class Question extends React.Component{
                     <Route exact path='/Question-10' render={()=> <QuestionPage questionArray = {this.state.questionArray[9]} answer = {this.state.userAnswer[9].result} choiceList = {this.state.selectList[8].choice} onChange = {this.onChange}/>}/>
                     <Route exact path='/Question-11' render={()=> <QuestionPage questionArray = {this.state.questionArray[10]} answer = {this.state.userAnswer[10].result} choiceList = {this.state.selectList[9].choice} onChange = {this.onChange}/>}/>
                     <Route exact path='/Question-12' render={()=> <QuestionPage questionArray = {this.state.questionArray[11]} answer = {this.state.userAnswer[11].result} choiceList = {this.state.selectList[10].choice} onChange = {this.onChange}/>}/>
-                    <Route exact path='/Result' render={()=> <Result/>}/>
+                    <Route exact path='/Result' render={()=> <Result userAnswer = {this.state.userAnswer} />}/>
                 </Switch>
                 </Router>
          </div>

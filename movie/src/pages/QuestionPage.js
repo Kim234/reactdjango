@@ -89,7 +89,7 @@ class QuestionPage extends React.Component{
                 {
                     this.props.questionArray.id == 2 &&
                     <Link to= {this.state.nextpage[this.props.questionArray.id]}>
-                            {sliceemotion.map((m,index)=>(<div><Button variant ="outline-danger" style={buttonStyle} value={m.id} onClick={this.onChangeAns} key ={index}> {m.emotion} </Button></div>))}
+                            {sliceemotion.map((m,index)=>(<Button variant ="outline-danger" style={buttonStyle} value={m.id} onClick={this.onChangeAns} key ={index}> {m.emotion} </Button>))}
                     </Link>
                 }      
                   

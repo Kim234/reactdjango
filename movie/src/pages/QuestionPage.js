@@ -68,10 +68,20 @@ class QuestionPage extends React.Component{
                 height:100,
                 fontSize:15,
                 borderRadius: 20,
-                marginLeft:500,
-                marginRight:500,
+                marginLeft:'33%',
+                marginRight:'33%',
                 marginBottom:20,
                 marginTop:20
+            }
+
+            const buttonStyle2={
+                width:80,
+                height:40,
+                fontSize:15,
+                marginLeft:'33%',
+                marginRight:'33%',
+                marginBottom:20,
+                marginTop:20,
             }
 
         return(
@@ -81,18 +91,20 @@ class QuestionPage extends React.Component{
                 {
                     this.props.questionArray.id !== 2 &&
                     
-                    <Link to= {this.state.nextpage[this.props.questionArray.id]}>
-                            {this.props.choiceList.map((m,index)=>(<Button variant ="outline-danger" style={buttonStyle} onClick={this.onChangeAns}  value = {index+1}  key ={index}> {m}</Button>))}
-                    </Link>
+                    // <Link to= {this.state.nextpage[this.props.questionArray.id]}>
+                            this.props.choiceList.map((m,index)=>(<Button variant ="outline-danger" style={buttonStyle} onClick={this.onChangeAns}  value = {index+1}  key ={index}> {m}</Button>))
+                    // </Link>
                     
                 } 
                 {
                     this.props.questionArray.id == 2 &&
-                    <Link to= {this.state.nextpage[this.props.questionArray.id]}>
-                            {sliceemotion.map((m,index)=>(<Button variant ="outline-danger" style={buttonStyle} value={m.id} onClick={this.onChangeAns} key ={index}> {m.emotion} </Button>))}
-                    </Link>
+                    // <Link to= {this.state.nextpage[this.props.questionArray.id]}>
+                            sliceemotion.map((m,index)=>(<Button variant ="outline-danger" style={buttonStyle} value={m.id} onClick={this.onChangeAns} key ={index}> {m.emotion} </Button>))
+                    // </Link>
                 }      
-                  
+                  {
+                     this.props.answer !== 0 && <Link to= {this.state.nextpage[this.props.questionArray.id]}><Button variant ="danger" style={buttonStyle2} onClick = {()=>this.setState({answer : 0})}> 다음</Button></Link>
+                  }
             </div>
         );
     }

@@ -1,4 +1,4 @@
-<h1 align="center">리액트 장고기반 영화장르 추천 웹페이지에 오신 것을 환영합니다!👋</h1>
+<h1 align="center">영화장르 추천 웹페이지에 오신 것을 환영합니다!👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href=" " target="_blank">
@@ -16,9 +16,9 @@
 ## 주요 기술 
 ```sh
 * Frontend
-    - React
+    - React (movie 폴더)
 * Backend
-    - Django
+    - Django (new_genre_recommendation 폴더)
 * DB
     - Mysql
 ```

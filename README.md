@@ -53,7 +53,7 @@ npm install
 
 2. 가상환경을 활성화 합니다. --> conda activate (가상환경 이름)
 
-3. 장고를 실행합니다. --> python manage.py runserver react
+3. 장고와 리액트를 실행합니다. --> python manage.py runserver react
 
 ```
 ---------------------------------
